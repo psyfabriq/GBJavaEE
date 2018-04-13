@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/date")
-public class DateServlet extends HttpServlet {
-
+@WebServlet(urlPatterns = "/catalog")
+public class CatalogServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp.getWriter().println(new Date());
+		req.setAttribute("title", "Каталог");
+		req.getRequestDispatcher("catalog.jsp").forward(req, resp);
 	}
-	
+
 }

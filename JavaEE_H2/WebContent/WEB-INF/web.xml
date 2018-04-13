@@ -7,13 +7,45 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+
 	<servlet>
-		<servlet-name>TestServlet</servlet-name>
-		<servlet-class>com.pfq.javaee.servlet.TestServlet</servlet-class>
+		<servlet-name>MainServlet</servlet-name>
+		<servlet-class>com.pfq.javaee.servlet.MainServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>TestServlet</servlet-name>
-		<url-pattern>/test</url-pattern>
+		<servlet-name>MainServlet</servlet-name>
+		<url-pattern></url-pattern>
 	</servlet-mapping>
+
+	<filter>
+		<filter-name>UTF8Filter</filter-name>
+		<filter-class>com.pfq.javaee.filters.UTF8Filter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>UTF8Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>NavigateMenuFilter</filter-name>
+		<filter-class>com.pfq.javaee.filters.NavigateMenuFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>NavigateMenuFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error-404.jsp</location>
+	</error-page>
+
+	<error-page>
+		<error-code>403</error-code>
+		<location>/error-403.jsp</location>
+	</error-page>
+
 </web-app>
