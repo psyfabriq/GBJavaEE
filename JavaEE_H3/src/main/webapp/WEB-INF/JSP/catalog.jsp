@@ -15,6 +15,11 @@
 			<jsp:include page="/WEB-INF/includes/navmenu.jsp"></jsp:include>
 		</div>
 
+		<div class="jumbotron">
+		<c:out value="${item.name}" />
+			<jsp:include page="/WEB-INF/includes/product.jsp"></jsp:include>
+		</div>
+
 		<jsp:include page="/WEB-INF/includes/footer.jsp"></jsp:include>
 	</div>
 </body>

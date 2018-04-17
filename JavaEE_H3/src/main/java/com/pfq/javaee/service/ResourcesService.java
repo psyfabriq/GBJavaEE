@@ -11,6 +11,7 @@ public class ResourcesService {
 		List<String> list = new ArrayList<>();	
 		list.add(res+"css/bootstrap.min.css");
 		list.add(res+"css/justified-nav.css");
+		list.add(res+"css/style.css");
 		return list;
 	}
 
