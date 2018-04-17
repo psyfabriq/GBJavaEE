@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1><%=request.getAttribute("title")%></h1>
-	<%@include file="includes/navmenu.jsp"%>
+	<%@include file="/WEB-INF/includes/navmenu.jsp"%>ude file="includes/navmenu.jsp"%>
+
 </body>
 </html>

@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><%=request.getAttribute("title")%></title>
+<title>Error Mapping Sample - 403</title>
 </head>
 <body>
-	<h1><%=request.getAttribute("title")%></h1>
-	<%@include file="includes/navmenu.jsp"%>
+	<h1>Error Mapping Sample - 403</h1>
+	Go
+	<a href="${pageContext.request.contextPath}/">home</a>.
 </body>
 </html>
