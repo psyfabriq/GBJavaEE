@@ -10,6 +10,7 @@ public class ResourcesService {
 	public List<String> getListCSS() {
 		List<String> list = new ArrayList<>();	
 		list.add(res+"css/bootstrap.min.css");
+		list.add(res+"css/justified-nav.css");
 		return list;
 	}
 

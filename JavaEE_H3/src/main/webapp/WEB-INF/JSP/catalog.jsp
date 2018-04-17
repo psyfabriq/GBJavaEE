@@ -1,14 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><%=request.getAttribute("title")%></title>
-</head>
+<jsp:include page="/WEB-INF/includes/head.jsp"></jsp:include>
 <body>
-	<h1><%=request.getAttribute("title")%></h1>
-	<%@include file="/WEB-INF/includes/navmenu.jsp"%>ude file="includes/navmenu.jsp"%>
+	<div class="container">
+		<div class="masthead">
+			<h3>
+				<c:out value="${title}" />
+			</h3>
+			<jsp:include page="/WEB-INF/includes/navmenu.jsp"></jsp:include>
+		</div>
 
+		<jsp:include page="/WEB-INF/includes/footer.jsp"></jsp:include>
+	</div>
 </body>
 </html>

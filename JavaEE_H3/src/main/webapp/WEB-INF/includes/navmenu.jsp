@@ -1,11 +1,11 @@
-<%@ page import ="java.util.ArrayList"%>
-<%@ page import ="java.util.List"%>	
-	<ul>
-		<%
-			ArrayList<String> navigate = (ArrayList<String>) request.getAttribute("navigatemenu");
-			for (String link : navigate) {
-		%>
-		    <li><%=link%></li>
-		    
-		<%}%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<nav>
+	<ul class="nav nav-justified">
+		<c:forEach items="${navigatemenu}" var="url">
+			<li>${url}</li>
+		</c:forEach>
 	</ul>
+</nav>

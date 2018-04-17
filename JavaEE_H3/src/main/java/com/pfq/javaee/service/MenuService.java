@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MenuService {
 	
-	public List<String> getListNavigate() {
+	public List<String> getListNavigate() {		
 		List<String> list = new ArrayList<>();
 		list.add("<a href=\"./\">Главная</a>");
 		list.add("<a href=\"./catalog\">Каталог</a>");
