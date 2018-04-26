@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15247435918901" configfile="/javaee4/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="562" id="pf15247436171092" outlinks="pf15247436171093 pf15247436171094 pf15247436171095 pf15247472665299" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="mega.xhtml" x="338" y="178" id="pf15247436171096" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf15247436171093" path="/cart.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="test.xhtml" x="338" y="562" id="pf15247436171107" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf15247436171094" path="/order.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="edit.xhtml" x="338" y="946" id="pf15247436171108" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf15247436171095" path="/catalog.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf152474726652910" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15247472665299"/>
+  <links id="pf15247436171093" target="pf15247436171096" source="pf15247436171092" outcome="cart"/>
+  <links id="pf15247436171094" target="pf15247436171107" source="pf15247436171092" outcome="order"/>
+  <links id="pf15247436171095" target="pf15247436171108" source="pf15247436171092" outcome="catalog"/>
+  <links id="pf15247472665299" target="pf152474726652910" source="pf15247436171092" outcome="home"/>
+</pageflow:Pageflow>
