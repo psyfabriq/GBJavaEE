@@ -14,6 +14,6 @@ public class MainServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setAttribute("title", "Главная");
-		req.getRequestDispatcher("/WEB-INF/JSP/index.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/JSF/index.xhtml").forward(req, resp);
 	}
 }

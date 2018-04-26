@@ -14,10 +14,10 @@ public class Dispatcher {
 
 	private Dispatcher(){}
 	public void dispatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String pageBase = "/WEB-INF/jsf/";
+		String pageBase = "/WEB-INF/JSF/";
 		String pagePath = null;
 
-		pagePath = pageBase + FilenameUtils.getName(request.getRequestURI())+".xhtml";
+		pagePath = pageBase + FilenameUtils.getBaseName(request.getRequestURI())+".xhtml";
 		request.getServletContext().getRequestDispatcher(pagePath).forward(request, response);
 	}
 	public static Dispatcher getInstance() {
