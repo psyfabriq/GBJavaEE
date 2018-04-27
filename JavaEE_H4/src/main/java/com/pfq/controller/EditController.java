@@ -1,7 +1,7 @@
 package com.pfq.controller;
 
-import com.pfq.dao.ProductDAO;
-import com.pfq.entity.Product;
+import com.pfq.dao.NomenclatureDAO;
+import com.pfq.entity.Nomenclature;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -12,29 +12,33 @@ import javax.inject.Inject;
 @ManagedBean
 public class EditController extends AbstractController {
 
-    private final String id = getParamString("id");
+	private final String id = getParamString("id");
 
-    @Inject
-    private ProductDAO productDAO;
+	@Inject
+	private NomenclatureDAO productDAO;
 
-    private Product product;
+	private Nomenclature product;
 
-    @PostConstruct
-    private void init() {
-        product = productDAO.getProductById(id);
-    }
+	@PostConstruct
+	private void init() {
+		product = id.isEmpty() ? new Nomenclature() : productDAO.getProductById(id);
+	}
 
-    public Product getProduct() {
-        return product;
-    }
+	public Nomenclature getProduct() {
+		return product;
+	}
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
+	public void setProduct(Nomenclature product) {
+		this.product = product;
+	}
 
-    public String save() {
-        productDAO.merge(product);
-        return "test";
-    }
+	public String save() {
+		if (id.isEmpty()) {
+			productDAO.persist(product);
+		} else {
+			productDAO.merge(product);
+		}
+		return "listnomenclature";
+	}
 
 }

@@ -6,7 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 public abstract class AbstractController {
 
     protected String getParamString(String paramName) {
-        return getHttpServletRequest().getParameter(paramName);
+    	String result = getHttpServletRequest().getParameter(paramName)!=null?getHttpServletRequest().getParameter(paramName):"";
+        return result;
     }
 
     public HttpServletRequest getHttpServletRequest() {

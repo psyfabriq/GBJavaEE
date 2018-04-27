@@ -8,7 +8,7 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-	<title><h:outputText value="PRODUCT EDIT" /></title>
+	<title><h:outputText value="CATEGORY EDIT" /></title>
 	<h:outputStylesheet name="css/bootstrap.min.css" />
 	<h:outputStylesheet name="css/font-awesome.min.css" />
 	<h:outputStylesheet name="css/admin.css" />
@@ -21,12 +21,12 @@
 			<ol class="breadcrumb">
 				<li><a href="#"> <em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">product edit</li>
+				<li class="active">category edit</li>
 			</ol>
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">PRODUCT EDIT</h1>
+				<h1 class="page-header">CATEGORY EDIT</h1>
 			</div>
 		</div>
 		<div class="panel panel-container">
@@ -36,39 +36,18 @@
 					<p:outputLabel value="PRODUCT ID" />
 				</p:outputPanel>
 				<p:outputPanel style="margin-bottom: 20px;">
-					<p:outputLabel value="#{editController.product.id}" />
+					<p:outputLabel value="#{editCategoryController.categore.id}" />
 				</p:outputPanel>
 
 				<p:outputPanel>
 					<p:outputLabel value="PRODUCT NAME" />
 				</p:outputPanel>
 				<p:outputPanel style="margin-bottom: 20px;">
-					<p:inputText value="#{editController.product.name}" />
+					<p:inputText value="#{editCategoryController.categore.name}" />
 				</p:outputPanel>
 
 				<p:outputPanel>
-					<p:outputLabel value="PRODUCT DESCRIPTION" />
-				</p:outputPanel>
-				<p:outputPanel style="margin-bottom: 20px;">
-					<p:inputText value="#{editController.product.description}" />
-				</p:outputPanel>
-
-				<p:outputPanel>
-					<p:outputLabel value="PRODUCT IMAGE PATH" />
-				</p:outputPanel>
-				<p:outputPanel style="margin-bottom: 20px;">
-					<p:inputText value="#{editController.product.img_path}" />
-				</p:outputPanel>
-
-				<p:outputPanel>
-					<p:outputLabel value="PRODUCT COST" />
-				</p:outputPanel>
-				<p:outputPanel style="margin-bottom: 20px;">
-					<p:inputText value="#{editController.product.cost}" />
-				</p:outputPanel>
-
-				<p:outputPanel>
-					<p:commandButton value="SAVE" action="#{editController.save}" />
+					<p:commandButton value="SAVE" action="#{editCategoryController.save}" />
 				</p:outputPanel>
 
 			</h:form>

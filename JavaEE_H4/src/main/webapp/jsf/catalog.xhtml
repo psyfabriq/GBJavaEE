@@ -7,19 +7,55 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-	<title><h:outputText value="Главная Страница" /></title>
+	<title><h:outputText value="Каталог" /></title>
 	<h:outputStylesheet name="css/bootstrap.min.css" />
 	<h:outputStylesheet name="css/style.css" />
 </h:head>
 <h:body>
 	<div class="container">
 		<ui:include src="/jsf/includes/header.xhtml">
-			<ui:param name="title" value="Главная Страница" />
+			<ui:param name="title" value="Каталог" />
 		</ui:include>
 
 		<div class="jumbotron">
-			<h1>Catalog !</h1>
-			<p class="lead">text here</p>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="list-group">
+						<ui:repeat value="#{nomenclatureController.categores}"
+							var="category">
+							<a href="#" class="list-group-item"><h:outputText
+									value="#{category.name}" /></a>
+						</ui:repeat>
+					</div>
+				</div>
+				<div class="col-md-8 products">
+					<div class="row">
+						<ui:repeat value="#{nomenclatureController.products}"
+							var="product">
+							<div class="col-sm-4">
+								<div class="product">
+									<div class="product-img">
+										<a href="#"><h:graphicImage value="#{product.img_path}" /></a>
+									</div>
+									<p class="product-title">
+										<a href="#"><h:outputText value="#{product.name}" /></a>
+									</p>
+									<p class="product-desc">
+										<h:outputText value="#{product.description}" />
+									</p>
+									<p class="product-price">
+										Price:
+										<h:outputText value="#{product.cost}" />
+									</p>
+								</div>
+							</div>
+
+						</ui:repeat>
+
+					</div>
+				</div>
+			</div>
+
 		</div>
 
 		<ui:include src="/jsf/includes/footer.xhtml"></ui:include>

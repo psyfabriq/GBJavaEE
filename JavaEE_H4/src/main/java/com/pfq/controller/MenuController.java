@@ -23,6 +23,19 @@ public class MenuController {
 		return list;
 	}
 	
+	public List<Link> getAdminMenuLinks() {
+		List<Link> list = new ArrayList<>();
+		
+		list.add(Link.newBuilder().setURL("admin").setTitle("Dashboard").build());
+		list.add(Link.newBuilder().setURL("admin/list-nomenclatures").setTitle("Товары").build());
+		list.add(Link.newBuilder().setURL("admin/list-categories").setTitle("Категории").build());
+		list.add(Link.newBuilder().setURL("admin/list-orders").setTitle("Заказы").build());
+		list.add(Link.newBuilder().setURL("admin/quit").setTitle("Выйти").build());
+
+		return list;
+	}
+	
+	
 	 public String showPage(Link l) {
 		 System.out.println(l.getUrl());
 		return l.getUrl(); 
