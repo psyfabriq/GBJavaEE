@@ -13,12 +13,12 @@ public class NomenclatureDAO extends AbstractDAO {
 	public List<Nomenclature> getListProductByCategoryId(String categoryId) {
 		if (categoryId == null || categoryId.isEmpty())
 			return getListProduct();
-		return em.createQuery("SELECT e FROM Product e WHERE e.category.id = :categoryId", Nomenclature.class)
+		return em.createQuery("SELECT e FROM Nomenclature e WHERE category.id = :categoryId", Nomenclature.class)
 				.setParameter("categoryId", categoryId).getResultList();
 	}
 
 	public List<Nomenclature> getListProduct() {
-		return em.createQuery("SELECT e FROM Product e", Nomenclature.class).getResultList();
+		return em.createQuery("SELECT e FROM Nomenclature e", Nomenclature.class).getResultList();
 	}
 
 	public void persist(Nomenclature product) {

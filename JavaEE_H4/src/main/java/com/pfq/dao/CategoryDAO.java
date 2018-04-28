@@ -2,46 +2,59 @@ package com.pfq.dao;
 
 import java.util.Collection;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 
 import com.pfq.entity.Category;
+import com.pfq.entity.Nomenclature;
 
-@ApplicationScoped
+@Stateless
 public class CategoryDAO extends AbstractDAO {
+	
+	/*
+	public List<Category> getListCategoriesByProductId(String categoryId) {
+		if (categoryId == null || categoryId.isEmpty())
+			return getListCategories();
+		return em.createQuery("SELECT e FROM Category e WHERE category.id = :categoryId", Category.class)
+				.setParameter("categoryId", categoryId).getResultList();
+	}
+	*/
 
-    private final Map<String, Category> categores = new LinkedHashMap<>();
-    
-    
-
-    public CategoryDAO() {
-		Category catAll = new Category(true);
-		categores.put(catAll.getId(), catAll);
+	public List<Category> getListCategory() {
+		return em.createQuery("SELECT e FROM Category e", Category.class).getResultList();
 	}
 
-	public Collection<Category> getListCategores() {
-        return categores.values();
-    }
+	public void persist(Category category) {
+		if (category == null)
+			return;
+		em.persist(category);
+	}
 
-    public void persist(Category category) {
-        if (category == null) return;
-        categores.put(category.getId(), category);
-    }
+	public Category getCategoryById(String id) {
+		if (id == null)
+			return null;
+		return em.find(Category.class, id);
+	}
 
-    public Category getCategoryById(String id) {
-        if (id == null) return null;
-        return categores.get(id);
-    }
+	public void merge(Category category) {
+		if (category == null)
+			return;
+		em.merge(category);
+	}
 
-    public void merge(Category category) {
-        if (category == null) return;
-        categores.put(category.getId(), category);
-    }
+	public void removeCategory(Category category) {
+		if (category == null)
+			return;
+		em.remove(category);
+	}
 
-    public void removeCategory(Category category) {
-        if (category == null) return;
-        categores.remove(category.getId());
-    }
-
+	public void removeCategory(String categoryid) {
+		if (categoryid == null || categoryid.isEmpty())
+			return;
+		Category category = em.find(Category.class, categoryid);
+		em.remove(category);
+	}
 }

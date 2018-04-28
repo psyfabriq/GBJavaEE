@@ -1,15 +1,20 @@
 package com.pfq.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "nomenclature")
 public class Nomenclature extends AbstractEntity {
 
 	@Column(nullable = false, columnDefinition = "TEXT")
@@ -23,6 +28,9 @@ public class Nomenclature extends AbstractEntity {
     private Date date;
     @ManyToOne
     private Category category;
+    
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "products")
+    private  List<Order> orders = new ArrayList();
     
 	public String getName() {
 		return name;
@@ -66,6 +74,11 @@ public class Nomenclature extends AbstractEntity {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+	public List<Order> getOrders() {
+		return orders;
+	}
+	
 
+	
 	
 }

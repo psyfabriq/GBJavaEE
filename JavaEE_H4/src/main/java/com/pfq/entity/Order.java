@@ -2,18 +2,34 @@ package com.pfq.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "order")
 public class Order  extends AbstractEntity{
 
+	@Column
     private String name = "";
+	@Column
     private String phone = "";
+	@Column
     private String adress = "";
-    private final List<Nomenclature> products = new ArrayList();
+    
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinTable(
+    		name = "products",
+            joinColumns = { @JoinColumn(name = "order_id") }, 
+            inverseJoinColumns = { @JoinColumn(name = "nomenclature_id") }
+        )
+    private  List<Nomenclature> products = new ArrayList();
 
 	public String getName() {
 		return name;

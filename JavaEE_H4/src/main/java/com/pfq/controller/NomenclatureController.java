@@ -35,7 +35,7 @@ public class NomenclatureController {
 	}
 
 	public List<Category> getCategores() {
-		return new ArrayList<>(categorytDAO.getListCategores());
+		return new ArrayList<>(categorytDAO.getListCategory());
 	}
 
 
