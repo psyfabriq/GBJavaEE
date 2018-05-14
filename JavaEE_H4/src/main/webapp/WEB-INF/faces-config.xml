@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>listnomenclature</from-outcome>
+			<to-view-id>/jsf/admin/list-nomenclatures</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listcategore</from-outcome>
+			<to-view-id>/jsf/admin/list-categories</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listusers</from-outcome>
+			<to-view-id>/jsf/admin/list-users</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listroles</from-outcome>
+			<to-view-id>/jsf/admin/list-roles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>editnomenclature</from-outcome>
+			<to-view-id>/jsf/admin/edit-nomenclature</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>editcategory</from-outcome>
+			<to-view-id>/jsf/admin/edit-category</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edituser</from-outcome>
+			<to-view-id>/jsf/admin/edit-user</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>editrole</from-outcome>
+			<to-view-id>/jsf/admin/edit-role</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<application>
+	     <view-handler>
+            com.pfq.helper.HiddenPageViewHandler
+        </view-handler>
+		<!-- This supports resources referenced from within css files e.g. url(../fonts/glyphicons) -->
+		<resource-handler>org.omnifaces.resourcehandler.UnmappedResourceHandler</resource-handler>
+	</application>
+
+
+</faces-config>

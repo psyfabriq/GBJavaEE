@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<div id="sidebar-collapse"
+		class="col-sm-3 col-lg-2 sidebar collapse in" aria-expanded="true"
+		style="">
+		<div class="profile-sidebar">
+			<div class="profile-userpic">
+				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive"
+					alt=""></img>
+			</div>
+			<div class="profile-usertitle">
+				<div class="profile-usertitle-name">Username</div>
+				<div class="profile-usertitle-status">
+					<span class="indicator label-success"></span>Online
+				</div>
+				<ui:repeat value="#{menuController.userLinks}" var="link">
+					<li><h:outputLink value="#{link.url}">#{link.title}</h:outputLink></li>
+				</ui:repeat>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="divider"></div>
+
+		<ul class="nav menu">
+			<ui:repeat value="#{menuController.adminMenuLinks}" var="link">
+				<li><h:outputLink value="#{link.url}">#{link.title}</h:outputLink></li>
+			</ui:repeat>
+		</ul>
+	</div>
+
+</ui:composition>

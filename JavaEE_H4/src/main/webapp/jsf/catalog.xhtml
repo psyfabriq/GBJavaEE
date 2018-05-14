@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+	<title><h:outputText value="Каталог" /></title>
+	<h:outputStylesheet name="css/bootstrap.min.css" />
+	<h:outputStylesheet name="css/style.css" />
+</h:head>
+<h:body>
+	<div class="container">
+		<ui:include src="/jsf/includes/header.xhtml">
+			<ui:param name="title" value="Каталог" />
+		</ui:include>
+
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="list-group">
+						<ui:repeat value="#{nomenclatureController.categores}"
+							var="category">
+							<a href="#" class="list-group-item"><h:outputText
+									value="#{category.name}" /></a>
+						</ui:repeat>
+					</div>
+				</div>
+				<div class="col-md-8 products">
+					<div class="row">
+						<ui:repeat value="#{nomenclatureController.products}"
+							var="product">
+							<div class="col-sm-4">
+								<div class="product">
+									<div class="product-img">
+										<a href="#"><h:graphicImage value="#{product.img_path}" /></a>
+									</div>
+									<p class="product-title">
+										<a href="#"><h:outputText value="#{product.name}" /></a>
+									</p>
+									<p class="product-desc">
+										<h:outputText value="#{product.description}" />
+									</p>
+									<p class="product-price">
+										Price:
+										<h:outputText value="#{product.cost}" />
+									</p>
+								</div>
+							</div>
+
+						</ui:repeat>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<ui:include src="/jsf/includes/footer.xhtml"></ui:include>
+	</div>
+</h:body>
+</html>
