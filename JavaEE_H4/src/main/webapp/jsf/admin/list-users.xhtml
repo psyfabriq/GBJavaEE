@@ -61,7 +61,7 @@
 					</p:column>
 					<p:column headerText="EMAIL" style="width: 100%; text-align: left;"
 						sortable="true" sortBy="#{item.email}">
-						<p:outputLabel value="#{item.phone}" />
+						<p:outputLabel value="#{item.email}" />
 					</p:column>
 					<p:column headerText="LOGIN" style="width: 100%; text-align: left;"
 						sortable="true" sortBy="#{item.login}">
@@ -70,12 +70,12 @@
 					<p:column headerText="Is Active"
 						style="width: 100%; text-align: left;" sortable="true"
 						sortBy="#{item.isActive}">
-						<p:outputLabel value="#{item.isActive}" />
+						<p:outputLabel value="#{item.isactive}" />
 					</p:column>
 					<p:column headerText="Is Administrative"
 						style="width: 100%; text-align: left;" sortable="true"
 						sortBy="#{item.isAdministrative}">
-						<p:outputLabel value="#{item.isAdministrative}" />
+						<p:outputLabel value="#{item.isadministrative}" />
 					</p:column>
 					<p:column width="80" style="text-align: center;">
 						<p:link value="EDIT" outcome="edituser">

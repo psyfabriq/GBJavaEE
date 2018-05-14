@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.pfq.utils.Password;
 
@@ -31,11 +32,14 @@ public class User  extends AbstractEntity  implements Serializable  {
 	@Column
 	private String passwordHash = "";
 	@Column
-	private boolean isActive;
+	private boolean isactive;
 	@Column
-	private boolean isAdministrative;
+	private boolean isadministrative;
 	@Column
 	private Date   dateAdd;
+	
+	@Transient
+	private String password;
 	
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
     @JoinTable(
@@ -93,22 +97,6 @@ public class User  extends AbstractEntity  implements Serializable  {
 		}
 	}
 
-	public boolean isActive() {
-		return isActive;
-	}
-
-	public void setActive(boolean isActive) {
-		this.isActive = isActive;
-	}
-
-	public boolean isAdministrative() {
-		return isAdministrative;
-	}
-
-	public void setAdministrative(boolean isAdministrative) {
-		this.isAdministrative = isAdministrative;
-	}
-
 	public Date getDateAdd() {
 		return dateAdd;
 	}
@@ -124,6 +112,40 @@ public class User  extends AbstractEntity  implements Serializable  {
 	public void setUserRoles(List<Role> userRoles) {
 		this.userRoles = userRoles;
 	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+		 setPasswordHash(password);
+	}
+
+
+	public boolean isIsactive() {
+		return isactive;
+	}
+
+
+	public void setIsactive(boolean isactive) {
+		this.isactive = isactive;
+	}
+
+
+	public boolean isIsadministrative() {
+		return isadministrative;
+	}
+
+
+	public void setIsadministrative(boolean isadministrative) {
+		this.isadministrative = isadministrative;
+	}
+	
+	
+	
 	
 
 }

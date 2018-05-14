@@ -13,6 +13,7 @@ import com.pfq.entity.User;
 public class EditUserController extends AbstractController {
 
 	private final String id = getParamString("id");
+	private String[] selectedRoles;
 
 	@Inject
 	private UserDAO userDAO;
@@ -38,7 +39,17 @@ public class EditUserController extends AbstractController {
 		} else {
 			userDAO.merge(user);
 		}
-		return "listuser";
+		return "listusers";
 	}
+
+	public String[] getSelectedRoles() {
+		return selectedRoles;
+	}
+
+	public void setSelectedRoles(String[] selectedRoles) {
+		this.selectedRoles = selectedRoles;
+	}
+	
+	
 
 }
