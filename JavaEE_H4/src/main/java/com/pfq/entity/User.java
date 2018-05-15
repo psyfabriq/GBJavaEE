@@ -121,6 +121,7 @@ public class User  extends AbstractEntity  implements Serializable  {
 
 	public void setPassword(String password) {
 		this.password = password;
+		 if(!password.isEmpty())
 		 setPasswordHash(password);
 	}
 

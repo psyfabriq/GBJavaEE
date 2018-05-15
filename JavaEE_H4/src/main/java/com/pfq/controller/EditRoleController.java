@@ -38,7 +38,7 @@ public class EditRoleController extends AbstractController {
 		} else {
 			roleDAO.merge(role);
 		}
-		return "listrole";
+		return "listroles";
 	}
 
 }

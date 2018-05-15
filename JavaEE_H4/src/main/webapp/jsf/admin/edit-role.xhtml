@@ -21,12 +21,12 @@
 			<ol class="breadcrumb">
 				<li><a href="#"> <em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">category edit</li>
+				<li class="active">role edit</li>
 			</ol>
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">CATEGORY EDIT</h1>
+				<h1 class="page-header">ROLE EDIT</h1>
 			</div>
 		</div>
 		<div class="panel panel-container">
@@ -35,7 +35,7 @@
 				<p:toolbar>
 					<f:facet name="left">
 						<p:commandButton value="SAVE" icon="ui-icon-document"
-							action="#{editCategoryController.save}" />
+							action="#{editRoleController.save}" />
 						<span class="ui-separator"> <span
 							class="ui-icon ui-icon-grip-dotted-vertical" />
 						</span>
@@ -46,18 +46,18 @@
 				<div class="ui-g">
 					<div class="ui-g-6">
 						<p:outputPanel>
-							<p:outputLabel value="PRODUCT ID" />
+							<p:outputLabel value="ROLE ID" />
 						</p:outputPanel>
 						<p:outputPanel style="margin-bottom: 20px;">
-							<p:outputLabel value="#{editCategoryController.categore.id}" />
+							<p:outputLabel value="#{editRoleController.role.id}" />
 						</p:outputPanel>
 					</div>
 					<div class="ui-g-6">
 						<p:outputPanel>
-							<p:outputLabel value="PRODUCT NAME" />
+							<p:outputLabel value="ROLE NAME" />
 						</p:outputPanel>
 						<p:outputPanel style="margin-bottom: 20px;">
-							<p:inputText value="#{editCategoryController.categore.name}" />
+							<p:inputText value="#{editRoleController.role.name}" />
 						</p:outputPanel>
 					</div>
 				</div>
@@ -65,11 +65,11 @@
 				<div class="ui-g">
 					<div class="ui-g-12">
 						<p:outputPanel>
-							<p:outputLabel value="PRODUCT DESCRIPTION" />
+							<p:outputLabel value="ROLE DESCRIPTION" />
 						</p:outputPanel>
 						<p:outputPanel style="margin-bottom: 20px;">
 							<p:textEditor widgetVar="editor2"
-								value="#{editCategoryController.categore.description}"
+								value="#{editRoleController.role.description}"
 								height="300" style="margin-bottom:10px"
 								placeholder="Enter your content">
 								<f:facet name="toolbar">
@@ -94,7 +94,7 @@
 				<p:toolbar>
 					<f:facet name="left">
 						<p:commandButton value="SAVE" icon="ui-icon-document"
-							action="#{editCategoryController.save}" />
+							action="#{editRoleController.save}" />
 						<span class="ui-separator"> <span
 							class="ui-icon ui-icon-grip-dotted-vertical" />
 						</span>
