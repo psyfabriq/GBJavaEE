@@ -1,5 +1,6 @@
 package com.pfq.dao;
 
+import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 
@@ -7,6 +8,7 @@ import com.pfq.entity.Nomenclature;
 
 import java.util.*;
 
+@Local
 @Stateless
 public class NomenclatureDAO extends AbstractDAO {
 

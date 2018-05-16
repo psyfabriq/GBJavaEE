@@ -2,11 +2,12 @@ package com.pfq.dao;
 
 import java.util.List;
 
+import javax.ejb.Local;
 import javax.ejb.Stateless;
 
-import com.pfq.entity.Category;
 import com.pfq.entity.User;
 
+@Local
 @Stateless
 public class UserDAO extends AbstractDAO {
 	

@@ -2,10 +2,12 @@ package com.pfq.dao;
 
 import java.util.List;
 
+import javax.ejb.Local;
 import javax.ejb.Stateless;
 
 import com.pfq.entity.Order;
 
+@Local
 @Stateless
 public class OrderDAO extends AbstractDAO {
 	

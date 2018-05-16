@@ -3,9 +3,11 @@ package com.pfq.dao;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.ejb.Local;
 
 import com.pfq.entity.Category;
 
+@Local
 @Stateless
 public class CategoryDAO extends AbstractDAO {
 	
